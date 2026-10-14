@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The page may not contact any server, so statements can never leave the device -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; img-src 'self' data:; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <title>Subscription Finder: find every subscription you're paying for</title>
+  <meta name="description" content="Drop in a bank statement and see every subscription and regular payment, what it costs you a year, and when it renews. Runs on your device. No bank login.">
+  <link rel="canonical" href="{{SITE_URL}}/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subscription Finder">
+  <meta property="og:title" content="Find every subscription you're still paying for">
+  <meta property="og:description" content="See every subscription in your bank statement, what it costs you a year, and when it renews. Your statement never leaves your device.">
+  <meta property="og:url" content="{{SITE_URL}}/">
+  <meta property="og:image" content="{{SITE_URL}}/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b7a57">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Subscriptions">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <span class="logo"><span class="logo-mark" aria-hidden="true"></span>Subscription Finder</span>
+      <span class="private">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Z"/></svg>
+        Nothing leaves your device
+      </span>
+      <a id="unlock-link" class="unlock-link" href="unlock.html" target="_blank" rel="noopener" hidden>Unlock</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="start">
+      <h1>Find every subscription you're still paying for</h1>
+      <p class="lead">Add a bank statement to see every regular payment, what it costs you a year and when it renews. Your statement stays on this device: no bank login, no account. Try it free on a sample statement first.</p>
+
+      <label id="drop" class="drop" tabindex="0">
+        <input type="file" id="file" accept=".csv,.txt,text/csv" multiple hidden>
+        <span class="drop-title">Drop your statement here</span>
+        <span class="drop-sub">or click to choose a CSV file</span>
+        <span class="drop-hint">You can add several files to cover a whole year.</span>
+        <span class="drop-lock" id="drop-lock" hidden>Unlock for <span data-price></span> once to use your own statement</span>
+      </label>
+
+      <section id="paywall" class="panel paywall" role="dialog" aria-labelledby="paywall-title" hidden>
+        <h2 id="paywall-title">Scanning your own statement is part of the full app</h2>
+        <p>One payment of <b><span data-price></span></b>, with no subscription. You get every subscription and bill in your statement, free-trial tracking and calendar reminders. Your statement still never leaves your device.</p>
+        <div class="row">
+          <a class="primary button" href="unlock.html" target="_blank" rel="noopener">Unlock for <span data-price></span></a>
+          <button type="button" class="secondary" id="paywall-sample">Try the free sample first</button>
+        </div>
+        <p class="muted small">Unlocking opens in a new tab. Come back here afterwards and add your statement.</p>
+      </section>
+
+      <p class="or"><button type="button" id="sample" class="link">Try it free with a sample statement</button></p>
+
+      <div id="error" class="error" role="alert" hidden></div>
+      <section id="mapping" class="panel" hidden></section>
+
+      <details class="how">
+        <summary>How do I get a CSV file from my bank?</summary>
+        <ol>
+          <li>Log in to your bank's website or app.</li>
+          <li>Look for <b>Statements</b>, <b>Transactions</b> or <b>Export</b>.</li>
+          <li>Choose <b>CSV</b> (sometimes called "spreadsheet" or "Excel") and pick the last 12 months.</li>
+        </ol>
+        <p>Twelve months works best. Yearly renewals only show up if the statement covers them.</p>
+      </details>
+
+      <ul class="promises">
+        <li><b>Private.</b> The app runs in your browser and works offline. Your statement is never uploaded.</li>
+        <li><b>No bank login.</b> You choose exactly which statement to share with it.</li>
+        <li><b>Pays for itself.</b> Cancelling one forgotten subscription covers the cost.</li>
+      </ul>
+    </section>
+
+    <section id="results" hidden></section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <a href="guide.html">How to find your subscriptions</a> · <a href="cancel-app-subscriptions.html">Cancel app subscriptions</a> · <a href="cancel-direct-debit.html">Cancel a Direct Debit</a> · <a href="free-trials.html">Free trials</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="unlock.html" target="_blank" rel="noopener">Enter a licence key</a>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="licence.js"></script>
+  <script src="detector.js"></script>
+  <script src="sample.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

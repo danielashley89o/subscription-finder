@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+  body { background: var(--bg); display: flex; align-items: center; gap: 56px; padding: 0 72px; box-sizing: border-box; }
+  .copy { flex: 1; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 26px; margin-bottom: 28px; }
+  .brand img { width: 48px; height: 48px; }
+  h1 { font-size: 60px; line-height: 1.05; margin: 0 0 22px; }
+  .sub { font-size: 25px; color: var(--muted); margin: 0; }
+  .lock { color: var(--accent); font-weight: 700; }
+  .stack { width: 400px; display: grid; gap: 14px; }
+  .tile-value { font-size: 44px; }
+  .card { padding: 16px 20px; }
+</style></head>
+<body>
+  <div class="copy">
+    <div class="brand"><img src="../icons/icon.svg" alt="">Subscription Finder</div>
+    <h1>Find every subscription you're still paying for</h1>
+    <p class="sub">Drop in a bank statement. <span class="lock">Nothing leaves your device.</span></p>
+  </div>
+  <div class="stack">
+    <div class="tile tile-main"><span class="tile-label">Subscriptions</span><span class="tile-value">£1,265.16<small> a year</small></span><span class="tile-sub">£105.43 a month · 9 active</span></div>
+    <div class="card"><div class="card-main"><div class="card-name"><strong>Netflix</strong><span class="card-when">Monthly · next 3 Nov</span></div><div class="card-price"><strong>£12.99</strong><span>£155.88 a year</span></div></div></div>
+    <div class="card is-cancel"><div class="card-main"><div class="card-name"><strong>Disney+</strong><span class="card-when">Monthly · next 14 Nov</span></div><div class="card-price"><strong>£5.99</strong><span>£71.88 a year</span></div></div><div class="badges"><span class="badge badge-warn">Price went up from £4.99</span></div></div>
+  </div>
+</body></html>

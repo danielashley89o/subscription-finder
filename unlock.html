@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- This page may only contact this website's own server, to check payments and keys -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self' data:; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <title>Unlock Subscription Finder</title>
+  <meta name="description" content="Unlock the full Subscription Finder app: every subscription, cancellation tracking, free trials and reminders. One payment, no subscription.">
+  <link rel="canonical" href="{{SITE_URL}}/unlock">
+  <meta name="theme-color" content="#0b7a57">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span>Subscription Finder</a>
+    </div>
+  </header>
+
+  <main class="wrap narrow">
+    <!-- Shown when someone comes back from paying -->
+    <section id="after-payment" hidden>
+      <h1 id="after-title">Confirming your payment…</h1>
+      <p id="after-message" class="lead" role="status">This only takes a moment.</p>
+      <div id="key-box" class="panel key-box" hidden>
+        <h2>Your licence key</h2>
+        <p class="key" id="key-text"></p>
+        <div class="row">
+          <button type="button" class="primary" id="copy">Copy key</button>
+          <a class="secondary button" href="index.html">Go to the app</a>
+        </div>
+        <p class="muted small">This browser is unlocked already. Keep the key somewhere safe, such as your notes or password manager: you'll need it to unlock the app on your other devices.</p>
+      </div>
+    </section>
+
+    <section id="shop">
+      <h1>Unlock the full app</h1>
+      <p class="lead">See every subscription and bill, mark what to cancel, track free trials and get calendar reminders. <b><span data-price></span> once</b>, with no subscription.</p>
+
+      <section class="panel">
+        <h2>Buy a licence</h2>
+        <p class="muted">You'll pay securely through Stripe. Afterwards you'll come straight back here with your licence key.</p>
+        <a id="buy" class="primary button" href="#">Buy for <span data-price></span></a>
+        <p id="buy-missing" class="muted small" hidden>Buying isn't open yet.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Already bought it?</h2>
+        <form id="unlock-form" class="unlock-form">
+          <label class="field" for="key">Licence key
+            <input id="key" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="SF-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX" required>
+          </label>
+          <button type="submit" class="primary">Unlock</button>
+        </form>
+        <p id="message" role="status" class="message" hidden></p>
+        <p class="muted small">Lost your key? Email us from the address you paid with and we'll send it again.</p>
+      </section>
+    </section>
+
+    <p class="muted small">Unlocking sends only your licence key (or, straight after buying, your payment reference) to our server to check it. Your bank statements are never sent anywhere: the page that reads them can't connect to the internet at all.</p>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="licence.js"></script>
+  <script src="unlock.js"></script>
+</body>
+</html>

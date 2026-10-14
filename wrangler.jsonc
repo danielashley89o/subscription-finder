@@ -1,0 +1,21 @@
+{
+  "name": "subscription-finder",
+  "compatibility_date": "2026-10-12",
+  // Handles /api/licence and /api/verify; everything else is the website in dist/
+  "main": "worker.js",
+  // No request logs: the privacy policy promises no analytics
+  "observability": {
+    "enabled": false
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // These go to worker.js before the website files, so they aren't redirected
+    "run_worker_first": ["/google7a4720d46a6fcf76.html"]
+  },
+  // Not secret. STRIPE_KEY and LICENCE_SECRET are set with `npx wrangler secret put` and never stored here.
+  "vars": {
+    // The Stripe product being sold (prod_...). Test-mode and live products have different IDs.
+    "STRIPE_PRODUCT_ID": "prod_VRHfbNyTgQGGtf"
+  }
+}

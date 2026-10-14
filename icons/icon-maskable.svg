@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512"  fill="#0b7a57"/>
+  <g transform="translate(51 51) scale(.8)" fill="none" stroke="#fff" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M384 210a136 136 0 0 0-246-46"/>
+    <path d="M128 302a136 136 0 0 0 246 46"/>
+    <path d="M132 112v56h56"/>
+    <path d="M380 400v-56h-56"/>
+  </g>
+  <text transform="translate(51 51) scale(.8)" x="256" y="300" text-anchor="middle" font-family="-apple-system, Helvetica, Arial, sans-serif" font-weight="800" font-size="150" fill="#fff">£</text>
+</svg>

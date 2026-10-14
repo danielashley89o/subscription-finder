@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{SITE_URL}}/</loc></url>
+  <url><loc>{{SITE_URL}}/guide</loc></url>
+  <url><loc>{{SITE_URL}}/cancel-app-subscriptions</loc></url>
+  <url><loc>{{SITE_URL}}/cancel-direct-debit</loc></url>
+  <url><loc>{{SITE_URL}}/free-trials</loc></url>
+  <url><loc>{{SITE_URL}}/unlock</loc></url>
+  <url><loc>{{SITE_URL}}/privacy</loc></url>
+  <url><loc>{{SITE_URL}}/terms</loc></url>
+  <url><loc>{{SITE_URL}}/refunds</loc></url>
+</urlset>
